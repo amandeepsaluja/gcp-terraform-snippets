@@ -23,4 +23,3 @@ jobs:
           service_account: "${{ secrets.SA_EMAIL }}"
           token_format: "access_token"
           access_token_lifetime: "100s"
-#
