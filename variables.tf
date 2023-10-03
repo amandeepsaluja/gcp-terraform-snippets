@@ -8,12 +8,12 @@ variable "region" {
     description = "Google project region"
 }
 
-variable "new_bucket_name" {
+variable "bucket_name" {
     type= string
     description = "Name of the new bucket to create"
 }
 
-variable "new_bucket_location" {
+variable "bucket_location" {
     type= string
     description = "Location of the new bucket to create"
 }
