@@ -13,3 +13,5 @@ jobs:
     uses: amandeepsaluja/gcp-terraform-snippets/.github/workflows/gcp-terraform-reusable-workflow.yml@master
     with:
       working_dir: cloud-storage/1-create-bucket
+      wif_provider: ${{ secrets.WIF_PROVIDER }}
+      wif_sa_email: ${{ secrets.SA_EMAIL }}
