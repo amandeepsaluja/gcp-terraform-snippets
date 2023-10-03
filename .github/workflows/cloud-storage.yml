@@ -5,11 +5,11 @@ on:
   push:
     branches:
       - master
-    paths:
-      - "cloud-storage/1-create-bucket/*"
+    # paths:
+    #   - "cloud-storage/1-create-bucket/*"
 
 jobs:
   create-gcs-bucket:
     uses: amandeepsaluja/gcp-terraform-snippets/.github/workflows/gcp-terraform-reusable-workflow.yml@master
     with:
-      working_dir: cloud-storage/1-create-bucket"
+      working_dir: cloud-storage/1-create-bucket
