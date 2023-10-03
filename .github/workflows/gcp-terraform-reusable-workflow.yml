@@ -6,6 +6,9 @@ on:
       working_dir:
         required: true
         type: string
+    secrets:
+      GOOGLE_APPLICATION_CREDENTIALS:
+        required: true
 
 jobs:
   terraform:
