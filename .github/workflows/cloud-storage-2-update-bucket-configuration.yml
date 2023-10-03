@@ -1,0 +1,17 @@
+# workflow for GCP workload identity federation
+name: Creating GCS Bucket via Terraform
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - cloud-storage/2-update-bucket-configuration/**
+
+jobs:
+  create-bucket:
+    name: Update GCS Versioning Policy
+    uses: ./.github/workflows/gcp-terraform-reusable-workflow.yml
+    with:
+      working_dir: cloud-storage/2-update-bucket-configuration
+    secrets: inherit
