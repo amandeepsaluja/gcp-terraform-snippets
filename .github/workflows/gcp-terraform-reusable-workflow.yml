@@ -14,11 +14,11 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ${{ github.event.inputs.working_dir }}
+        working-directory: ${{ inputs.working_dir }}
 
     permissions:
-      contents: "read"
-      id-token: "write"
+      contents: read
+      id-token: write
 
     steps:
       - name: Checkout
