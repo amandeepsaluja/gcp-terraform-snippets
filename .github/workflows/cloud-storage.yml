@@ -10,10 +10,6 @@ on:
 
 jobs:
   create-gcs-bucket:
-    permissions:
-      contents: "read"
-      id-token: "write"
-
     uses: amandeepsaluja/gcp-terraform-snippets/.github/workflows/gcp-terraform-reusable-workflow.yml@master
     with:
       working_dir: cloud-storage/1-create-bucket
