@@ -1,4 +1,4 @@
-name: Re-Usable Workflow for GCP Auth and Terraform
+name: Reusable Workflow for GCP Auth and Terraform
 
 on:
   workflow_call:
@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  terraform:
+  gcp-auth-and-terraform:
     name: Terraform
     runs-on: ubuntu-latest
     defaults:
