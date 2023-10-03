@@ -6,6 +6,6 @@ provider "google" {
 terraform {
     backend "gcs" { 
       bucket  = "gcp-practice-project-aman-terraform-state-bucket"
-      prefix  = "cloud-storage"
+      prefix  = "cloud-storage/1-create-bucket"
     }
 }

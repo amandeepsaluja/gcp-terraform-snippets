@@ -5,47 +5,11 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "cloud-storage/1-create-bucket/*"
 
 jobs:
-  terraform:
-    name: "Terraform"
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: "read"
-      id-token: "write"
-
-    steps:
-      # Checkout the repository to the GitHub Actions runner
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      # Authenticate to Google Cloud
-      - name: Authenticate to Google Cloud
-        id: auth
-        uses: google-github-actions/auth@v0
-        with:
-          workload_identity_provider: "${{ secrets.WIF_PROVIDER }}"
-          service_account: "${{ secrets.SA_EMAIL }}"
-          token_format: "access_token"
-          create_credentials_file: "true"
-
-      # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-
-      # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-      - name: Terraform Init
-        run: terraform init
-
-      # # Checks that all Terraform configuration files adhere to a canonical format
-      # - name: Terraform Format
-      #   run: terraform fmt -check
-
-      # Generates an execution plan for Terraform
-      - name: Terraform Plan
-        run: terraform plan
-
-      # Builds or changes infrastructure
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+  create-gcs-bucket:
+    uses: amandeepsaluja/gcp-terraform-snippets/.github/workflows/gcp-terraform-reusable-workflow.yml@master
+    with:
+      working_dir: cloud-storage/1-create-bucket"
