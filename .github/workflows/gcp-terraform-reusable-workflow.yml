@@ -6,12 +6,6 @@ on:
       working_dir:
         required: true
         type: string
-      wif_provider:
-        required: true
-        type: string
-      wif_sa_email:
-        required: true
-        type: string
 
 jobs:
   terraform:
@@ -35,8 +29,8 @@ jobs:
         id: auth
         uses: google-github-actions/auth@v0
         with:
-          workload_identity_provider: ${{ inputs.wif_provider }}
-          service_account: ${{ inputs.wif_sa_email }}
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.SA_EMAIL }}
 
       # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
       - name: Setup Terraform
