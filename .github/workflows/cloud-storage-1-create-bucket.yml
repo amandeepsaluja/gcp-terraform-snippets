@@ -5,9 +5,8 @@ on:
   push:
     branches:
       - master
-  directory:
     paths:
-      - "cloud-storage/1-create-bucket"
+      - cloud-storage/1-create-bucket
 
 jobs:
   create-bucket:
