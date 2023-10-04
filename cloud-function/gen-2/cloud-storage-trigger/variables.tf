@@ -76,7 +76,5 @@ variable "bucket_name" {
   default     = "gcp-practice-project-aman-cloud-function-input"
 }
 
-variable "service_account_name" {
-  type      = string
-  sensitive = true
+variable "service_account_email" {
 }
