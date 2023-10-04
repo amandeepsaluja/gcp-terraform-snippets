@@ -11,8 +11,7 @@ jobs:
   gcp-auth-and-terraform:
     name: Terraform
     runs-on: ubuntu-latest
-    env:
-      TF_VAR_service_account_email: ${{ secrets.SA_EMAIL }}
+
     defaults:
       run:
         shell: bash
@@ -45,7 +44,11 @@ jobs:
       # Generates an execution plan for Terraform
       - name: Terraform Plan
         run: terraform plan
+        env:
+          TF_VAR_service_account_email: ${{ secrets.SA_EMAIL }}
 
       # Builds or changes infrastructure
       - name: Terraform Apply
         run: terraform apply -auto-approve
+        env:
+          TF_VAR_service_account_email: ${{ secrets.SA_EMAIL }}
