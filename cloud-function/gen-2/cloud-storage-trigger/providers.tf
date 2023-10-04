@@ -5,8 +5,7 @@ provider "google" {
 
 terraform {
     backend "gcs" { 
-      bucket  = var.terraform_state_bucket
-      prefix  = var.terraform_state_prefix
-      key = "${var.cloud_function_name}.tfstate"
+      bucket  = "gcp-practice-project-aman-terraform-state-bucket"
+      prefix  = "cloud-function"
     }
 }
