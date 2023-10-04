@@ -1,13 +1,13 @@
 variable "project_id" {
-    type= string
-    description = "Google project ID"
-    default = "gcp-practice-project-aman"
+  type        = string
+  description = "Google project ID"
+  default     = "gcp-practice-project-aman"
 }
 
 variable "region" {
-    type= string
-    description = "Google project region"
-    default = "us-central1"
+  type        = string
+  description = "Google project region"
+  default     = "us-central1"
 }
 
 variable "name" {
@@ -73,6 +73,6 @@ variable "all_traffic_on_latest_revision" {
 variable "bucket_name" {
   description = "The bucket name where the cloud function code will be stored"
   type        = string
-  default = "gcp-practice-project-aman-cloud-function-input"
+  default     = "gcp-practice-project-aman-cloud-function-input"
 }
 

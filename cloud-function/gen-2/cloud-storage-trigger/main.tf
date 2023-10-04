@@ -1,4 +1,4 @@
-resource "google_cloudfunctions2_function" "function" {
+resource "google_cloudfunctions2_function" "this" {
   name        = var.name
   location    = var.location
   description = var.description
@@ -10,8 +10,8 @@ resource "google_cloudfunctions2_function" "function" {
 
     source {
       storage_source {
-        bucket = google_storage_bucket.function.id
-        object = google_storage_bucket_object.function.name
+        bucket = google_storage_bucket.this.id
+        object = google_storage_bucket_object.this.name
       }
     }
   }
@@ -25,22 +25,21 @@ resource "google_cloudfunctions2_function" "function" {
   }
 }
 
-# generating zip file name for the cloud function
-locals {
-  cf_zip_archive_name = "${var.cloud_function_name}-${data.archive_file.cf_source_zip.output_sha}.zip"
-}
-
 # creating the zip file
-data "archive_file" "cf_source_zip" {
+data "archive_file" "this" {
   type        = "zip"
   output_path = "/tmp/${var.name}.zip"
   source_dir  = "${path.module}/../src"
 }
 
+# generating zip file name for the cloud function
+locals {
+  cf_zip_archive_name = "${var.name}-${data.archive_file.cf_source_zip.output_sha}.zip"
+}
+
 # uploading the zip file to the bucket
-resource "google_storage_bucket_object" "cf_source_zip" {
-  name         = local.cf_zip_archive_name
-  source       = data.archive_file.cf_source_zip.output_path
-  content_type = "application/zip"
-  bucket       = google_storage_bucket.cf_source_archive_bucket.name
+resource "google_storage_bucket_object" "this" {
+  name   = local.cf_zip_archive_name
+  bucket = google_storage_bucket.cf_source_archive_bucket.name
+  source = data.archive_file.this.output_path
 }
