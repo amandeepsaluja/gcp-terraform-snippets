@@ -37,7 +37,7 @@ variable "runtime" {
 variable "entry_point" {
   description = "The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix, if not specified. For backward compatibility, if function with given name is not found, then the system will try to use function named \"function\". For Node.js this is name of a function exported by the module specified in source_location."
   type        = string
-  default     = "hello_gcs"
+  default     = "hello_http"
 }
 
 variable "max_instance_count" {
