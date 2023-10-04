@@ -1,16 +1,16 @@
-name: Deploy 2nd Gen Cloud Storage Trigger Cloud Function
+name: Deploy 2nd Gen HTTP Cloud Function
 
 on:
   push:
     branches:
       - master
     paths:
-      - cloud-function/gen-2/cloud-storage-trigger/**
+      - cloud-function/gen-2/http-trigger/**
 
 jobs:
   create-bucket:
     name: Deploy Cloud Function
     uses: ./.github/workflows/gcp-terraform-reusable-workflow.yml
     with:
-      working_dir: cloud-function/gen-2/cloud-storage-trigger
+      working_dir: cloud-function/gen-2/http-trigger
     secrets: inherit
