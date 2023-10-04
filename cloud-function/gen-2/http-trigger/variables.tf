@@ -54,7 +54,7 @@ variable "timeout_seconds" {
 
 variable "available_memory" {
   type    = string
-  default = "128M"
+  default = "256M"
 }
 
 variable "ingress_settings" {
