@@ -26,8 +26,10 @@ resource "google_cloudfunctions2_function" "this" {
   }
 
   event_trigger {
-    trigger_region = "us-central1"
-    event_type     = "google.cloud.audit.log.v1.written"
+    trigger_region        = "us-central1"
+    event_type            = "google.cloud.audit.log.v1.written"
+    service_account_email = var.service_account_email
+
     event_filters {
       attribute = "serviceName"
       value     = "storage.googleapis.com"
