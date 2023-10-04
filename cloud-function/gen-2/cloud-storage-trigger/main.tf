@@ -10,7 +10,7 @@ resource "google_cloudfunctions2_function" "this" {
 
     source {
       storage_source {
-        bucket = var.bucket_name
+        bucket = "${var.bucket_name}/${var.name}"
         object = google_storage_bucket_object.this.name
       }
     }
@@ -35,7 +35,7 @@ data "archive_file" "this" {
 
 # uploading the zip file to the bucket
 resource "google_storage_bucket_object" "this" {
-  name   = "${var.name}/${data.archive_file.this.output_sha}.zip"
+  name   = "${data.archive_file.this.output_sha}.zip"
   bucket = var.bucket_name
   source = data.archive_file.this.output_path
 }
