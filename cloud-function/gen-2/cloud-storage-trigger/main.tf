@@ -24,6 +24,24 @@ resource "google_cloudfunctions2_function" "this" {
     all_traffic_on_latest_revision = var.all_traffic_on_latest_revision
     service_account_email          = var.service_account_email
   }
+
+  event_trigger {
+    trigger_region = "us-central1"
+    event_type     = "google.cloud.audit.log.v1.written"
+    event_filters {
+      attribute = "serviceName"
+      value     = "storage.googleapis.com"
+    }
+    event_filters {
+      attribute = "methodName"
+      value     = "storage.objects.create"
+    }
+    event_filters {
+      attribute = "resourceName"
+      value     = var.cf_trigger_bucket_path
+      operator  = "match-path-pattern" # This allows path patterns to be used in the value field
+    }
+  }
 }
 
 # creating the zip file

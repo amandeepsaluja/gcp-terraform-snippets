@@ -76,5 +76,10 @@ variable "bucket_name" {
   default     = "gcp-practice-project-aman-cloud-function-input"
 }
 
+variable "cf_trigger_bucket_path" {
+  type    = string
+  default = "projects/_/buckets/test-bucket-aman-via-terraform/objects/cloud-function/**"
+}
+
 variable "service_account_email" {
 }
