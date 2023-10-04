@@ -78,7 +78,7 @@ variable "bucket_name" {
 
 variable "cf_trigger_bucket_path" {
   type    = string
-  default = "projects/_/buckets/test-bucket-aman-via-terraform/objects/cloud-function/**"
+  default = "projects/_/buckets/test-bucket-aman-via-terraform/objects/cloud-function/*"
 }
 
 variable "service_account_email" {
