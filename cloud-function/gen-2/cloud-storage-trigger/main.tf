@@ -34,7 +34,7 @@ data "archive_file" "this" {
 
 # generating zip file name for the cloud function
 locals {
-  cf_zip_archive_name = "${var.name}-${data.archive_file.cf_source_zip.output_sha}.zip"
+  cf_zip_archive_name = "${var.name}-${data.archive_file.this.output_sha}.zip"
 }
 
 # uploading the zip file to the bucket
