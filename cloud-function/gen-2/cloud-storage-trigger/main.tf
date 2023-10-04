@@ -23,7 +23,7 @@ resource "google_cloudfunctions2_function" "function" {
   name        = var.name
   location    = var.location
   description = var.description
-  project     = var.project
+  project     = var.project_id
 
   build_config {
     runtime     = var.runtime

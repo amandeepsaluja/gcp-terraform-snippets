@@ -58,11 +58,6 @@ variable "timeout_seconds" {
   default     = 60
 }
 
-variable "environment_variables" {
-  description = "(Optional) Environment variables that shall be available during function execution."
-  type        = map(string)
-}
-
 variable "ingress_settings" {
   description = "(Optional) Available ingress settings. Defaults to \"ALLOW_ALL\" if unspecified. Default value is ALLOW_ALL. Possible values are ALLOW_ALL, ALLOW_INTERNAL_ONLY, and ALLOW_INTERNAL_AND_GCLB."
   type        = string
