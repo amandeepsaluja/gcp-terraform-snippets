@@ -6,6 +6,6 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket = "gcp-practice-project-aman-terraform-state-bucket"
-    prefix = "cloud-function"
+    prefix = "cloud-function/gen-2/cloud-storage-trigger"
   }
 }
