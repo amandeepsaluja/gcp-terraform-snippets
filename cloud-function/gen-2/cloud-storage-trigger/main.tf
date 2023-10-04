@@ -10,7 +10,7 @@ resource "google_cloudfunctions2_function" "this" {
 
     source {
       storage_source {
-        bucket = google_storage_bucket.this.id
+        bucket = var.bucket_name
         object = google_storage_bucket_object.this.name
       }
     }
@@ -32,14 +32,9 @@ data "archive_file" "this" {
   source_dir  = "${path.module}/../src"
 }
 
-# generating zip file name for the cloud function
-locals {
-  cf_zip_archive_name = "${var.name}-${data.archive_file.this.output_sha}.zip"
-}
-
 # uploading the zip file to the bucket
 resource "google_storage_bucket_object" "this" {
-  name   = local.cf_zip_archive_name
-  bucket = google_storage_bucket.cf_source_archive_bucket.name
+  name   = "${var.name}.${data.archive_file.this.output_sha}.zip"
+  bucket = var.bucket_name
   source = data.archive_file.this.output_path
 }
