@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - cloud-function/gen-2/cloud-storage-trigger/**
+    # paths:
+    #   - cloud-function/gen-2/cloud-storage-trigger/**
 
 jobs:
   create-bucket:

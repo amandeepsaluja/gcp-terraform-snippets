@@ -78,6 +78,6 @@ variable "all_traffic_on_latest_revision" {
 variable "bucket_name" {
   description = "The bucket name where the cloud function code will be stored"
   type        = string
-  default = "test-bucket-aman-via-terraform/cloud-function/${var.name}"
+  default = "gcp-practice-project-aman-cloud-function-input"
 }
 
