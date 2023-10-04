@@ -11,6 +11,8 @@ jobs:
   gcp-auth-and-terraform:
     name: Terraform
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_service_account_email: ${{ secrets.SA_EMAIL }}
     defaults:
       run:
         shell: bash

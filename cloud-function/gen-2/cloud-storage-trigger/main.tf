@@ -22,6 +22,7 @@ resource "google_cloudfunctions2_function" "this" {
     timeout_seconds                = var.timeout_seconds
     ingress_settings               = var.ingress_settings
     all_traffic_on_latest_revision = var.all_traffic_on_latest_revision
+    service_account_email          = var.service_account_name
   }
 }
 
