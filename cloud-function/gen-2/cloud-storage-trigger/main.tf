@@ -29,7 +29,7 @@ resource "google_cloudfunctions2_function" "this" {
 data "archive_file" "this" {
   type        = "zip"
   output_path = "/tmp/${var.name}.zip"
-  source_dir  = "${path.module}/../src"
+  source_dir  = "src"
 }
 
 # uploading the zip file to the bucket
