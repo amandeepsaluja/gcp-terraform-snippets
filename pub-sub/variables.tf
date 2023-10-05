@@ -19,7 +19,7 @@ variable "topic_name" {
 variable "message_retention_duration" {
   type        = string
   description = "Google pubsub topic message retention duration"
-  default     = "4800s"
+  default     = "86400s" # 1 day
 }
 
 variable "subscription_name" {
@@ -43,7 +43,7 @@ variable "ack_deadline_seconds" {
 variable "ttl" {
   type        = string
   description = "Google pubsub subscription ttl"
-  default     = "4800s" # 60 minutes
+  default     = "86400s" # 1 day
 }
 
 variable "minimum_backoff" {
