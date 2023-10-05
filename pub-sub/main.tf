@@ -5,7 +5,7 @@ resource "google_pubsub_topic" "sample_pubsub_topic" {
 
   # these settings are done below seprately to test it out
   schema_settings {
-    schema   = google_pubsub_schema.schema_example.name
+    schema   = "projects/${var.project_id}/schemas/${google_pubsub_schema.schema_example.name}"
     encoding = "JSON"
   }
 }
