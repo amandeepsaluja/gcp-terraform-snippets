@@ -19,7 +19,7 @@ variable "topic_name" {
 variable "message_retention_duration" {
   type        = string
   description = "Google pubsub topic message retention duration"
-  default     = "86600s"
+  default     = "4800s"
 }
 
 variable "subscription_name" {
