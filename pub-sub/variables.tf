@@ -57,3 +57,15 @@ variable "enable_message_ordering" {
   description = "Google pubsub subscription enable message ordering"
   default     = false
 }
+
+variable "schema_name" {
+  type        = string
+  description = "Google pubsub schema name"
+  default     = "sample-pubsub-schema-via-terraform"
+}
+
+variable "schema_type" {
+  type        = string
+  description = "Google pubsub schema type"
+  default     = "AVRO"
+}
