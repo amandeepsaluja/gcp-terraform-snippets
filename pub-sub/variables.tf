@@ -37,7 +37,7 @@ variable "retain_acked_messages" {
 variable "ack_deadline_seconds" {
   type        = number
   description = "Google pubsub subscription ack deadline seconds"
-  default     = 20
+  default     = 60 # 1 minute
 }
 
 variable "ttl" {
