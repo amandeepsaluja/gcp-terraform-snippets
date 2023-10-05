@@ -1,0 +1,17 @@
+# workflow for GCP workload identity federation
+name: Creating GCS Bucket via Terraform
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - pub-sub/**
+
+jobs:
+  create-bucket:
+    name: Google Pub Sub
+    uses: ./.github/workflows/gcp-terraform-reusable-workflow.yml
+    with:
+      working_dir: pub-sub
+    secrets: inherit

@@ -9,7 +9,7 @@ on:
 
 jobs:
   gcp-auth-and-terraform:
-    name: Terraform
+    name: GCP Auth and Terraform Deployment
     runs-on: ubuntu-latest
 
     defaults:
