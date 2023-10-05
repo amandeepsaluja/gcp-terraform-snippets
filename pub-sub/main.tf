@@ -2,6 +2,12 @@
 resource "google_pubsub_topic" "sample_pubsub_topic" {
   name                       = var.topic_name
   message_retention_duration = var.message_retention_duration
+
+  # these settings are done below seprately to test it out
+  schema_settings {
+    schema   = google_pubsub_schema.schema_example.name
+    encoding = "JSON"
+  }
 }
 
 # create a Pub/Sub subscription
