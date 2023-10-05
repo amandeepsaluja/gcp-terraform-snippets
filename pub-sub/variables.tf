@@ -21,3 +21,45 @@ variable "message_retention_duration" {
   description = "Google pubsub topic message retention duration"
   default     = "86600s"
 }
+
+variable "subscription_name" {
+  type        = string
+  description = "Google pubsub subscription name"
+  default     = "sample-pubsub-subscription-via-terraform"
+}
+
+variable "message_retention_duration" {
+  type        = string
+  description = "Google pubsub topic message retention duration"
+  default     = "4800s" # 60 minutes
+}
+
+variable "retain_acked_messages" {
+  type        = bool
+  description = "Google pubsub subscription retain acked messages"
+  default     = false
+}
+
+variable "ack_deadline_seconds" {
+  type        = number
+  description = "Google pubsub subscription ack deadline seconds"
+  default     = 20
+}
+
+variable "ttl" {
+  type        = string
+  description = "Google pubsub subscription ttl"
+  default     = "4800s" # 60 minutes
+}
+
+variable "minimum_backoff" {
+  type        = string
+  description = "Google pubsub subscription minimum backoff"
+  default     = "10s"
+}
+
+variable "enable_message_ordering" {
+  type        = bool
+  description = "Google pubsub subscription enable message ordering"
+  default     = false
+}
