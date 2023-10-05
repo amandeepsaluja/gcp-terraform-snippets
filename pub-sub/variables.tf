@@ -28,12 +28,6 @@ variable "subscription_name" {
   default     = "sample-pubsub-subscription-via-terraform"
 }
 
-variable "message_retention_duration" {
-  type        = string
-  description = "Google pubsub topic message retention duration"
-  default     = "4800s" # 60 minutes
-}
-
 variable "retain_acked_messages" {
   type        = bool
   description = "Google pubsub subscription retain acked messages"
