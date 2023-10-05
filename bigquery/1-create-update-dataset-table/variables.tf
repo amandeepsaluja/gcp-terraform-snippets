@@ -14,13 +14,13 @@ variable "region" {
 variable "dataset_id" {
   type        = string
   description = "BigQuery dataset ID"
-  default     = "dataflow-raw"
+  default     = "dataflow_raw"
 }
 
 variable "dataset_friendly_name" {
   type        = string
   description = "BigQuery dataset friendly name"
-  default     = "dataflow-raw-dataset"
+  default     = "dataflow_raw_dataset"
 }
 
 variable "dataset_description" {
