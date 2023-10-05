@@ -20,3 +20,25 @@ resource "google_pubsub_subscription" "sample_pubsub_subscription" {
   }
   enable_message_ordering = var.enable_message_ordering
 }
+
+# create a Pub/Sub topic schema
+resource "google_pubsub_schema" "schema_example" {
+  name       = var.schema_name
+  type       = var.schema_type
+  definition = <<EOF
+{
+  "type": "record",
+  "name": "sample",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "message",
+      "type": "string"
+    }
+  ]
+}
+EOF
+}
