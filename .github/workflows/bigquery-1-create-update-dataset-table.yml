@@ -1,0 +1,16 @@
+name: Create and Update BigQuery Dataset
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - bigquery/1-create-update-dataset-table/**
+
+jobs:
+  create-bucket:
+    name: Deploy Cloud Function
+    uses: ./.github/workflows/gcp-terraform-reusable-workflow.yml
+    with:
+      working_dir: bigquery/1-create-update-dataset-table
+    secrets: inherit
