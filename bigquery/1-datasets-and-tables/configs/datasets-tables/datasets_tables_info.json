@@ -1,7 +1,7 @@
 [
     {
         "dataset_id": "raw_layer",
-        "dataset_description": "Data in this layer is stored in its original format without any transformation",
+        "description": "Data in this layer is stored in its original format without any transformation",
         "location": "US"
     },
 
