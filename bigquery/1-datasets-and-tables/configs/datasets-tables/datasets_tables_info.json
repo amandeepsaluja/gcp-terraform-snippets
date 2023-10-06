@@ -20,7 +20,13 @@
         "location": "US",
         "labels": {
             "data_layer": "curation"
-        }
+        },
+        "tables": [
+            {
+                "table_id": "dataflow_pub_sub",
+                "table_schema_path": "configs/tables-detail-and-schema/raw_layer/dataflow_pub_sub.json"
+            }
+        ]
     },
 
     {
@@ -29,6 +35,12 @@
         "location": "US",
         "labels": {
             "data_layer": "final"
-        }
+        },
+        "tables": [
+            {
+                "table_id": "dataflow_pub_sub",
+                "table_schema_path": "configs/tables-detail-and-schema/raw_layer/dataflow_pub_sub.json"
+            }
+        ]
     }
 ]
