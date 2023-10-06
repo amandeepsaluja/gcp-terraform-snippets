@@ -2,18 +2,27 @@
     {
         "dataset_id": "raw_layer",
         "description": "Data in this layer is stored in its original format without any transformation",
-        "location": "US"
+        "location": "US",
+        "labels": {
+            "data_layer": "raw"
+        }
     },
 
     {
         "dataset_id": "curation_layer",
         "description": "Data in this layer is partially transformed",
-        "location": "US"
+        "location": "US",
+        "labels": {
+            "data_layer": "curation"
+        }
     },
 
     {
         "dataset_id": "final_layer",
         "description": "Data in this layer is fully transformed and ready for consumption",
-        "location": "US"
+        "location": "US",
+        "labels": {
+            "data_layer": "final"
+        }
     }
 ]
