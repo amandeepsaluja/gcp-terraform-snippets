@@ -6,6 +6,6 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket = "gcp-practice-project-aman-terraform-state-bucket"
-    prefix = "bigquery"
+    prefix = "bigquery/1-datasets-and-tables"
   }
 }
