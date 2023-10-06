@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths:
-      - bigquery/**
+      - bigquery/1-datasets-and-tables/**
 
 jobs:
   create-bucket:
     name: Deploy Cloud Function
     uses: ./.github/workflows/gcp-terraform-reusable-workflow.yml
     with:
-      working_dir: bigquery
+      working_dir: bigquery/1-datasets-and-tables
     secrets: inherit
