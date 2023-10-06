@@ -17,5 +17,5 @@ resource "google_bigquery_table" "tables" {
     }
   }
 
-  schema = file("${path.module}/${each.value["table_schema_path"]}")
+  schema = file("${path.module}/../${each.value["table_schema_path"]}")
 }
