@@ -9,7 +9,7 @@
         "tables": [
             {
                 "table_id": "dataflow_pub_sub",
-                "table_schema_path": "configs/datasets-tables/dataflow_pub_sub.json"
+                "table_schema_path": "configs/table-schema/raw-layer/dataflow_pub_sub.json"
             }
         ]
     },
@@ -24,7 +24,7 @@
         "tables": [
             {
                 "table_id": "dataflow_pub_sub",
-                "table_schema_path": "configs/datasets-tables/dataflow_pub_sub.json"
+                "table_schema_path": "configs/table-schema/raw-layer/dataflow_pub_sub.json"
             }
         ]
     },
@@ -39,7 +39,7 @@
         "tables": [
             {
                 "table_id": "dataflow_pub_sub",
-                "table_schema_path": "configs/datasets-tables/dataflow_pub_sub.json"
+                "table_schema_path": "configs/table-schema/raw-layer/dataflow_pub_sub.json"
             }
         ]
     }
