@@ -1,3 +1,3 @@
 module "bigquery_dataset" {
-  source = "./dataset"
+  source = "./datasets"
 }
