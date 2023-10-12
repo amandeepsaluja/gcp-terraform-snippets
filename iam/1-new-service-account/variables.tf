@@ -13,7 +13,7 @@ variable "region" {
 variable "account_id" {
   type        = string
   description = "Service account ID"
-  default     = "github-gcp-airflow-cloud-composer-pipeline"
+  default     = "github-cloud-composer-sa"
 }
 
 variable "display_name" {
