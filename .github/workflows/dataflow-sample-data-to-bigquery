@@ -1,0 +1,49 @@
+name: Reusable Workflow for GCP Auth and Terraform
+
+on: workflow_dispatch
+
+jobs:
+  gcp-auth-and-terraform:
+    name: GCP Auth and Terraform Deployment
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: dataflow/templates/sample-data-to-bigquery
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v0
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.SA_EMAIL }}
+
+      # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+      - name: Terraform Init
+        run: terraform init
+
+      # Generates an execution plan for Terraform
+      - name: Terraform Plan
+        run: terraform plan
+        env:
+          TF_VAR_gcp_auth_token: ${{ steps.auth.outputs.access_token }}
+
+      # Builds or changes infrastructure
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+        env:
+          TF_VAR_gcp_auth_token: ${{ steps.auth.outputs.access_token }}
