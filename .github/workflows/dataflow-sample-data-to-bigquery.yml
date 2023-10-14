@@ -1,10 +1,10 @@
-name: Reusable Workflow for GCP Auth and Terraform
+name: Dataflow Sample
 
 on: workflow_dispatch
 
 jobs:
-  gcp-auth-and-terraform:
-    name: GCP Auth and Terraform Deployment
+  dataflow-test:
+    name: Dataflow Test
     runs-on: ubuntu-latest
 
     defaults:
