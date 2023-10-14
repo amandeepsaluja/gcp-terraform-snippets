@@ -16,7 +16,6 @@ ENV FLEX_TEMPLATE_PYTHON_PY_FILE="${WORKDIR}/my_pipeline.py"
 # Install apache-beam and other dependencies to launch the pipeline
 RUN apt-get update
 RUN pip install --no-cache-dir --upgrade pip
-RUN pip install 'apache-beam[gcp]==2.50.0'
 RUN pip install -U -r ./requirements.txt
 
 # Since we already downloaded all the dependencies, there's no need to rebuild everything.
